@@ -1,3 +1,7 @@
+using CarWorkshop.Infrastructure.Persistence;
+using Microsoft.EntityFrameworkCore;
+using CarWorkshop.Infrastructure.Extensions;
+
 namespace CarWorkshop.MVC
 {
     public class Program
@@ -8,6 +12,8 @@ namespace CarWorkshop.MVC
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            builder.Services.AddInfrastructure(builder.Configuration);
 
             var app = builder.Build();
 
