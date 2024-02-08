@@ -25,7 +25,13 @@ namespace CarWorkshop.MVC.Controllers
 
         public IActionResult About()
         {
-            return View();
+            var model = new About()
+            {
+                Title = "CarWorkshop application",
+                Description = "Some description",
+                Tags = new List<string>() { "car", "app", "free" }
+            };
+            return View(model);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
